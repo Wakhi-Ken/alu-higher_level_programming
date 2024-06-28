@@ -1,4 +1,2 @@
 #!/usr/bin/python3
-alpha = "ASCII" 
-if alpha.lower() == "ascii":
-    print(alpha.lower())
+print(''.join(chr(i) for i in range(97, 123)), end='')
