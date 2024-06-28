@@ -14,4 +14,3 @@ if __name__ == "__main__":
         print("{}: {}".format(input_num, string[number]), end="\n")
     else:
         print("0 arguments.")
-
