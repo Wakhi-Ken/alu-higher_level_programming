@@ -9,4 +9,3 @@ while tens < 10:
             print("{:d}{:d}".format(tens, ones), end="\n")
         ones += 1
     tens += 1
-
