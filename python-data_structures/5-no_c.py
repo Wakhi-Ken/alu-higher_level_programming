@@ -1,7 +1,12 @@
 #!/usr/bin/python3
 def no_c(my_string):
+    length = len(my_string)
     result = ""
-    for chare in my_string:
-        if chare != 'c' and chare != 'C':
-            result += chare
-            return result
+    for chare in range(length):
+        old = my_string[chare]
+        if old == 'c' or old == 'C':
+            new = ""
+            result += new
+        else:
+            result += old
+    return result
