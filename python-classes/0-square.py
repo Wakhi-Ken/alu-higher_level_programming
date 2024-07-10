@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+""" empty class defin - Square'"""
+
+
 class Square:
-    """The  definition of 4sided fig'Square'"""
+    """This is an empty definition - Square'"""
     pass
