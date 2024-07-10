@@ -46,6 +46,7 @@ class Square:
         if value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
+
     def my_print(self):
         """Prints a square + '#'"""
         print("{}".format("\n".join(["#" * self.__size] * self.__size)))
