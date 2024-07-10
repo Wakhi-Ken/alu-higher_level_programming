@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """def square"""
+
+
 class Square:
     """Definition of 'Square' class with private instance attribute."""
 
@@ -10,10 +12,6 @@ class Square:
         Args:
             size (int): The side length of the square.
             position (tuple): The position of the square.
-
-        Raises:
-            TypeError: If size is not an integer or position is not a tuple of two integers.
-            ValueError: If size is less than zero or position contains negative integers.
         """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
