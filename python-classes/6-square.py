@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """ def of a square"""
+
+
 class Square:
     """Definition of 'Square' class with private instance attribute."""
 
@@ -19,7 +21,7 @@ class Square:
         if size < 0:
             raise ValueError("size must be >= 0")
         self.__size = size
-        self.__position = (0, 0)  # Initialize position with default value
+        self.__position = position
 
     def area(self):
         """Calculates area of the square."""
