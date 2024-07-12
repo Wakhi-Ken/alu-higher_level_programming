@@ -2,5 +2,5 @@
 """a class called rectangle"""
 
 class Rectangle:
-    pass
+
 """class rectangle"""
