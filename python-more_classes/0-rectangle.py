@@ -2,5 +2,4 @@
 """a class called rectangle"""
 
 class Rectangle:
-
-"""class rectangle"""
+    """class rectangle"""
