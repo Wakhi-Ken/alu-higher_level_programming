@@ -1,3 +1,3 @@
 #!/bin/bash
 #Sets a header for a GET request
-curl -sH "$1" "X-HolbertonSchool-User-Id: 98"
+curl -sG "$1" "X-HolbertonSchool-User-Id: 98"
