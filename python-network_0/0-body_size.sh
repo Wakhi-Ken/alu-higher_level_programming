@@ -1,3 +1,5 @@
 #!/bin/bash
 # shows size of the body of the response
-curl -sI "$1" | sed -ne 's/Content-Length: //p'
+response=$(curl -sI "$1")
+content_length=$(echo "$response" | sed -ne 's/Content-Length: \([0-9]*\).*/\1/p')
+echo "$content_length"
