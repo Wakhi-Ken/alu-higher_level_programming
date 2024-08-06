@@ -6,7 +6,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 
-"""script that changes the name of a State object from the database hbtn_0e_6_usa"""
+"""changes the name of a State object from the database hbtn_0e_6_usa"""
 if __name__ == '__main__':
     url = 'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
         sys.argv[1], sys.argv[2], sys.argv[3]
