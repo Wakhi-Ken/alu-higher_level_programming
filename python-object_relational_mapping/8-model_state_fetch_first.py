@@ -6,7 +6,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 
-""" Write a script that prints the first State object from the database hbtn_0e_6_usa """
+""" a script that prints """
 if __name__ == '__main__':
     url = 'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
         sys.argv[1], sys.argv[2], sys.argv[3]
