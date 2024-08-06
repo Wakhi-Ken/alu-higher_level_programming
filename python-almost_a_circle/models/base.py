@@ -1,67 +1,27 @@
 #!/usr/bin/python3
-"""Base class"""
-import unittest
+"""Defines a Base class."""
 import json
-from models.base import Base
 
 
-class BaseTest(unittest.TestCase):
-    """Tests for the Base class."""
-    def setUp(self):
-        """Initializes the __nb_objects attribute before each test."""
-        self.assertIs(hasattr(Base, "_Base__nb_objects"), True)
-        Base._Base__nb_objects = 0
+class Base:
+    """A class with a counter attribute used to identify instances."""
+    __nb_objects = 0
 
-    def test_id_type(self):
-        """Checks if the id is an integer type."""
-        my_class = Base()
-        self.assertIs(type(my_class.id), int)
+    def __init__(self, id=None):
+        """Sets the id of the instance.
 
-    def test_id_increments(self):
-        """Checks if the ids increment."""
-        for i in range(1, 6):
-            with self.subTest(i=i):
-                my_class = Base()
-                self.assertEqual(my_class.id, i)
+        Args:
+            id: The ID of the instance.
+        """
+        if id is None:
+            Base.__nb_objects += 1
+            self.id = Base.__nb_objects
+        else:
+            self.id = id
 
-    def test_sets_id(self):
-        """Checks if the id can be set."""
-        my_class = Base(13)
-        self.assertEqual(my_class.id, 13)
-
-    def test_sets_id_increments(self):
-        """Checks if the ids increment after setting an id."""
-        for i in range(1, 10):
-            with self.subTest(i=i):
-                if i == 5:
-                    my_class = Base(13)
-                    self.assertEqual(my_class.id, 13)
-                else:
-                    my_class = Base()
-                    if i < 5:
-                        self.assertEqual(my_class.id, i)
-                    else:
-                        self.assertEqual(my_class.id, i - 1)
-
-    def test_sets_negative_id(self):
-        """Checks if the id can be set with a negative integer."""
-        my_class = Base(-7)
-        self.assertEqual(my_class.id, -7)
-
-    def test_to_json(self):
-        """Checks the json represntation."""
-        input = [{"x": 2, "width": 10, "id": 1, "height": 7, "y": 8}]
-        expected = json.dumps(input)
-        self.assertEqual(Base.to_json_string(input), expected)
-
-    def test_to_json_empty(self):
-        """Checks the json represntation with an empty list."""
-        input = []
-        expected = "[]"
-        self.assertEqual(Base.to_json_string(input), expected)
-
-    def test_to_json_none(self):
-        """Checks the json represntation with None."""
-        input = None
-        expected = "[]"
-        self.assertEqual(Base.to_json_string(input), expected)
+     @staticmethod
+    def to_json_string(list_dictionaries):
+        """Gets the json representation of a list of dictionaries."""
+        if not list_dictionaries:
+            return "[]"
+        return json.dumps(list_dictionaries)
