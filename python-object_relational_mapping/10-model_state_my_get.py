@@ -6,7 +6,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 
-"""State object with the name passed as argument from the database hbtn_0e_6_usa """
+"""State object with the name passed as argument"""
 if __name__ == '__main__':
     url = 'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
         sys.argv[1], sys.argv[2], sys.argv[3]
