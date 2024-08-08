@@ -125,7 +125,11 @@ class Base:
     @classmethod
     def load_from_file_csv(cls):
         """
-            Return: list of classes instantiated from a CSV file
+            Return: list of classes instantiated from a CSV file.
+            Reads from `<cls.__name__>.csv`.
+            Return:
+                If the file does not exist - an empty list.
+                Otherwise - a list of instantiated classes.
         """
         filename = cls.__name__ + ".csv"
         try:
@@ -144,7 +148,10 @@ class Base:
     @staticmethod
     def draw(list_rectangles, list_squares):
         """
-            Draw Rectangles and Squares using the turtle modules
+            Draw Rectangles and Squares using the turtle module.
+            Args:
+                list_rectangles (list): list of Rectangle objects to draw.
+                list_squares (list): list of Square objects to draw.
         """
         turt = turtle.Turtle()
         turt.screen.bgcolor("#b7312c")
